@@ -1,0 +1,50 @@
+# Render Blueprint Specification
+# Deploy both backend API and frontend static site with one click
+services:
+  # Backend Web Service
+  - type: web
+    name: support-ticket-backend
+    env: node
+    rootDir: backend
+    buildCommand: npm install
+    startCommand: node server.js
+    plan: free
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 5000
+      - key: DB_HOST
+        sync: false
+      - key: DB_PORT
+        value: 3306
+      - key: DB_USER
+        sync: false
+      - key: DB_PASSWORD
+        sync: false
+      - key: DB_NAME
+        value: support_tickets
+      - key: JWT_SECRET
+        generateValue: true
+      - key: CLIENT_ORIGIN
+        value: "*"
+
+  # Frontend Static Site
+  - type: web
+    name: support-ticket-frontend
+    env: static
+    rootDir: frontend
+    buildCommand: npm install && npm run build
+    staticPublishPath: dist
+    plan: free
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html
+    envVars:
+      - key: VITE_API_URL
+        fromService:
+          type: web
+          name: support-ticket-backend
+          property: url
+          suffix: /api
