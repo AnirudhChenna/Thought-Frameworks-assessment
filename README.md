@@ -11,7 +11,7 @@
 | :--- | :--- |
 | 🌐 **Live Deployed App** | [https://partner-query-fiction-entertainment.trycloudflare.com](https://partner-query-fiction-entertainment.trycloudflare.com) |
 | 💻 **GitHub Repository** | [https://github.com/AnirudhChenna/Thought-Frameworks-assessment](https://github.com/AnirudhChenna/Thought-Frameworks-assessment) |
-| 🎬 **Live Demo Walkthrough Video** | [Click to View Live Video](https://partner-query-fiction-entertainment.trycloudflare.com/demo-walkthrough.webp) / [GitHub Direct Video](https://github.com/AnirudhChenna/Thought-Frameworks-assessment/raw/main/docs/demo-walkthrough.webp) |
+| 🎬 **Demo Walkthrough Video** | [Live MP4 Video](https://partner-query-fiction-entertainment.trycloudflare.com/demo-walkthrough.mp4) • [GitHub Direct MP4](https://github.com/AnirudhChenna/Thought-Frameworks-assessment/raw/main/docs/demo-walkthrough.mp4) |
 | 🎥 **Loom Video Link** | `[Paste your Loom URL here - e.g. https://www.loom.com/share/...]` |
 | 📬 **Postman Collection** | [`postman_collection.json`](./postman_collection.json) |
 
