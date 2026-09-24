@@ -9,7 +9,8 @@
     "start:backend": "npm --prefix backend start",
     "dev:backend": "npm --prefix backend run dev",
     "dev:frontend": "npm --prefix frontend run dev",
-    "build:frontend": "npm --prefix frontend run build"
+    "build:frontend": "npm --prefix frontend run build",
+    "tunnel": "node tunnel.js"
   },
   "keywords": [
     "ticket-management",
@@ -20,5 +21,8 @@
     "rest-api"
   ],
   "author": "Assessment Candidate",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "localtunnel": "^2.0.2"
+  }
 }
