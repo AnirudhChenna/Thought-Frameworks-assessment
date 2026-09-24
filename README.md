@@ -11,7 +11,8 @@
 | :--- | :--- |
 | 🌐 **Live Deployed App** | [https://partner-query-fiction-entertainment.trycloudflare.com](https://partner-query-fiction-entertainment.trycloudflare.com) |
 | 💻 **GitHub Repository** | [https://github.com/AnirudhChenna/Thought-Frameworks-assessment](https://github.com/AnirudhChenna/Thought-Frameworks-assessment) |
-| 🎥 **Loom Walkthrough** | `[Paste your Loom URL here - e.g. https://www.loom.com/share/...]` |
+| 🎬 **Live Demo Walkthrough Video** | [Click to View Live Video](https://partner-query-fiction-entertainment.trycloudflare.com/demo-walkthrough.webp) / [GitHub Direct Video](https://github.com/AnirudhChenna/Thought-Frameworks-assessment/raw/main/docs/demo-walkthrough.webp) |
+| 🎥 **Loom Video Link** | `[Paste your Loom URL here - e.g. https://www.loom.com/share/...]` |
 | 📬 **Postman Collection** | [`postman_collection.json`](./postman_collection.json) |
 
 ---
@@ -411,14 +412,31 @@ docker-compose down -v
 
 ---
 
-## 🎥 Loom Video Walkthrough Guide
+## 🎥 Video Demonstration & Walkthrough
 
-### Recording Link
-> 🔗 **Loom Video URL:** `[Insert your Loom recording link here: https://www.loom.com/share/...]`
+### 🎬 Recorded Interactive Walkthrough
+
+The repository includes a recorded end-to-end interactive demo demonstrating customer ticket submission, discussion threads, agent triage, and SQL JOIN reporting.
+
+- 🌐 **Watch Online (Live Stream):** [https://partner-query-fiction-entertainment.trycloudflare.com/demo-walkthrough.webp](https://partner-query-fiction-entertainment.trycloudflare.com/demo-walkthrough.webp)
+- 📦 **GitHub Direct Video:** [https://github.com/AnirudhChenna/Thought-Frameworks-assessment/raw/main/docs/demo-walkthrough.webp](https://github.com/AnirudhChenna/Thought-Frameworks-assessment/raw/main/docs/demo-walkthrough.webp)
+- 🎥 **Personal Loom Recording:** `[Insert your personal Loom URL here if recording webcam/voice: https://www.loom.com/share/...]`
+
+![ResolveDesk Demo Walkthrough](./docs/demo-walkthrough.webp)
+
+### 📸 Minimalist UI Gallery
+
+| 1. Customer Dashboard (Monochrome) | 2. Ticket Discussion & Lifecycle |
+| :---: | :---: |
+| ![Customer Dashboard](./docs/screenshots/customer-dashboard.png) | ![Ticket Detail](./docs/screenshots/ticket-detail.png) |
+
+| 3. Assessment Req 8 SQL JOIN Report | 4. Role Authentication (1-Click Fill) |
+| :---: | :---: |
+| ![SQL Report](./docs/screenshots/sql-report.png) | ![Login](./docs/screenshots/login.png) |
 
 ---
 
-### Suggested 3–5 Minute Presentation Script
+### 🎙️ Suggested 3–5 Minute Presentation Script (For Personal Loom Recording)
 
 | Time | Topic | What to Show & Say |
 | :--- | :--- | :--- |
@@ -487,6 +505,9 @@ support-ticket-system/
 │   ├── schema.sql                    # DDL schema definition & indexes
 │   ├── seed.sql                      # Realistic sample customers, agents, tickets
 │   └── queries.sql                   # Requirement 8 JOIN query & analytics
+├── docs/
+│   ├── demo-walkthrough.webp         # Full animated demo video walkthrough
+│   └── screenshots/                  # High-resolution UI captures
 ├── postman/
 │   └── support_ticket_api.postman_collection.json # Exported Postman collection
 ├── tests/
