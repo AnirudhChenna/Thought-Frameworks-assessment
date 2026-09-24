@@ -91,7 +91,7 @@ export default function AuthView({ onAuthSuccess }) {
         {/* Brand Header */}
         <div className="auth-header">
           <div className="auth-icon-wrapper">
-            <LifeBuoy size={36} color="#6366f1" />
+            <LifeBuoy size={32} color="#ffffff" />
           </div>
           <h2>ResolveDesk Portal</h2>
           <p className="auth-subtitle">
@@ -104,7 +104,7 @@ export default function AuthView({ onAuthSuccess }) {
         {/* Quick Demo Switchers for Evaluator */}
         <div className="demo-credentials-banner">
           <div className="demo-title">
-            <Sparkles size={14} color="#fbbf24" />
+            <Sparkles size={14} color="#ffffff" />
             <span>Quick Demo Accounts (1-Click Fill)</span>
           </div>
           <div className="demo-buttons">

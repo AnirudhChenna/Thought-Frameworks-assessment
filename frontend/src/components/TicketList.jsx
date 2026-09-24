@@ -29,7 +29,7 @@ export default function TicketList({
   if (error) {
     return (
       <div className="ticket-list-error card">
-        <AlertCircle size={32} color="#f87171" />
+        <AlertCircle size={28} color="#ffffff" />
         <h3>Unable to load tickets</h3>
         <p>{error}</p>
       </div>
@@ -39,7 +39,7 @@ export default function TicketList({
   if (!tickets || tickets.length === 0) {
     return (
       <div className="ticket-list-empty card">
-        <Inbox size={48} color="#6366f1" />
+        <Inbox size={36} color="#71717a" />
         <h3>No tickets found</h3>
         <p>
           {userRole === 'customer'

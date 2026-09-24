@@ -45,7 +45,7 @@ ORDER BY t.created_at DESC;`;
       >
         <div className="modal-header">
           <div className="modal-title-with-icon">
-            <Database size={22} color="#6366f1" />
+            <Database size={20} color="#ffffff" />
             <div>
               <h3>Assessment Requirement 8: SQL JOIN Query</h3>
               <p className="modal-subtitle">
@@ -91,7 +91,7 @@ ORDER BY t.created_at DESC;`;
               </div>
             ) : openTickets.length === 0 ? (
               <div className="ticket-list-empty">
-                <CheckCircle2 size={32} color="#34d399" />
+                <CheckCircle2 size={28} color="#ffffff" />
                 <p>No open tickets at this time. All tickets are in progress or resolved.</p>
               </div>
             ) : (

@@ -57,7 +57,7 @@ export default function CreateTicketModal({ onClose, onTicketCreated, showToast 
       >
         <div className="modal-header">
           <div className="modal-title-with-icon">
-            <PlusCircle size={22} color="#6366f1" />
+            <PlusCircle size={20} color="#ffffff" />
             <h3>Raise a Support Ticket</h3>
           </div>
           <button 
