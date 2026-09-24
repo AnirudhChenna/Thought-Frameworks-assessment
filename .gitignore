@@ -5,6 +5,9 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
+# Binaries
+cloudflared.exe
+
 # Environment Variables
 .env
 .env.local
