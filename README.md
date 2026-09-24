@@ -5,19 +5,31 @@
 
 ---
 
+### 🚀 Submission Quick Links
+
+| Resource | Link |
+| :--- | :--- |
+| 🌐 **Live Deployed App** | [https://partner-query-fiction-entertainment.trycloudflare.com](https://partner-query-fiction-entertainment.trycloudflare.com) |
+| 💻 **GitHub Repository** | [https://github.com/AnirudhChenna/Thought-Frameworks-assessment](https://github.com/AnirudhChenna/Thought-Frameworks-assessment) |
+| 🎥 **Loom Walkthrough** | `[Paste your Loom URL here - e.g. https://www.loom.com/share/...]` |
+| 📬 **Postman Collection** | [`postman_collection.json`](./postman_collection.json) |
+
+---
+
 ## 📋 Table of Contents
-1. [Project Overview & Business Scenario](#-project-overview--business-scenario)
-2. [Key Features by Role](#-key-features-by-role)
-3. [Technology Stack](#-technology-stack)
-4. [Database Design & Schema (Requirement 7 & 8)](#-database-design--schema)
-5. [REST API Documentation (Requirement 6)](#-rest-api-documentation)
-6. [Security & Authorization (Requirement 10)](#-security--authorization)
-7. [Local Setup & Installation](#-local-setup--installation)
-8. [Automated Testing (Requirement 12)](#-automated-testing)
-9. [Postman Collection Guide (Requirement 11)](#-postman-collection-guide)
-10. [Cloud Deployment Guide (Requirement 14)](#-cloud-deployment-guide)
-11. [Docker Compose Setup (Optional Bonus)](#-docker-compose-setup)
-12. [Project File Structure](#-project-file-structure)
+1. [Submission Quick Links](#-submission-quick-links)
+2. [Project Overview & Business Scenario](#-project-overview--business-scenario)
+3. [Key Features by Role](#-key-features-by-role)
+4. [Technology Stack](#-technology-stack)
+5. [Database Design & Schema (Requirement 7 & 8)](#-database-design--schema)
+6. [REST API Documentation (Requirement 6)](#-rest-api-documentation)
+7. [Security & Authorization (Requirement 10)](#-security--authorization)
+8. [Local Setup & Installation](#-local-setup--installation)
+9. [Automated Testing (Requirement 12)](#-automated-testing)
+10. [Postman Collection Guide (Requirement 11)](#-postman-collection-guide)
+11. [Cloud Deployment Guide (Requirement 14)](#-cloud-deployment-guide)
+12. [Loom Video Walkthrough Guide](#-loom-video-walkthrough-guide)
+13. [Project File Structure](#-project-file-structure)
 
 ---
 
@@ -396,6 +408,26 @@ To shut down:
 ```bash
 docker-compose down -v
 ```
+
+---
+
+## 🎥 Loom Video Walkthrough Guide
+
+### Recording Link
+> 🔗 **Loom Video URL:** `[Insert your Loom recording link here: https://www.loom.com/share/...]`
+
+---
+
+### Suggested 3–5 Minute Presentation Script
+
+| Time | Topic | What to Show & Say |
+| :--- | :--- | :--- |
+| **0:00 – 0:45** | **Introduction & Tech Stack** | • Introduce yourself and project: ResolveDesk Support Ticket System.<br>• Highlight architecture: React (Vite) frontend with minimalist monochrome design tokens, Express.js backend, MySQL database with connection pooling, and JWT authentication. |
+| **0:45 – 1:45** | **Customer Experience** | • Click **1-Click Customer** to log in as `alice@example.com`.<br>• Point out the customer dashboard KPIs (Open, In Progress, Resolved).<br>• Click **"New Ticket"**, fill out Subject, Priority (**Urgent**), and Description.<br>• Open the created ticket, post a comment in the discussion thread.<br>• Emphasize role security: customers can only see their own tickets. |
+| **1:45 – 2:45** | **Support Agent Experience** | • Logout and click **1-Click Agent** to log in as `david.agent@example.com`.<br>• Show global KPI statistics across all customers.<br>• Use the search bar and filter pills (Status, Priority) to quickly triage tickets.<br>• Open Alice's urgent ticket, update status to **In Progress**, assign to yourself, and write an agent reply.<br>• Open the **SQL JOIN Report** modal showcasing Assessment Requirement 8. |
+| **2:45 – 3:30** | **Database Schema & SQL Requirement 8** | • Open [`database/schema.sql`](./database/schema.sql) and show the 3 core tables: `users`, `tickets`, `ticket_comments` with foreign keys and indexes.<br>• Open [`database/queries.sql`](./database/queries.sql) and highlight the SQL `JOIN` query joining `tickets` and `users` to list open tickets with customer names and emails. |
+| **3:30 – 4:15** | **Automated Testing & Postman** | • Run `npm test` in the terminal: show all **15 automated Jest/Supertest tests passing** (authentication, role authorization, ticket lifecycle, validation, comments).<br>• Mention [`postman_collection.json`](./postman_collection.json) in the repository root for API inspection. |
+| **4:15 – 4:45** | **Live Cloud Deployment & Conclusion** | • Demonstrate the public live deployment URL: `https://partner-query-fiction-entertainment.trycloudflare.com`<br>• Wrap up and thank the evaluator. |
 
 ---
 
