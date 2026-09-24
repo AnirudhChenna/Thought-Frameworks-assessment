@@ -1,9 +1,13 @@
 // Base API service with automatic JWT authentication
 const API_BASE_URL = import.meta.env.VITE_API_URL || '/api';
 
-export const getStoredToken = () => localStorage.getItem('support_ticket_token');
-export const setStoredToken = (token) => localStorage.setItem('support_ticket_token', token);
+export const getStoredToken = () => localStorage.getItem('token') || localStorage.getItem('support_ticket_token');
+export const setStoredToken = (token) => {
+  localStorage.setItem('token', token);
+  localStorage.setItem('support_ticket_token', token);
+};
 export const removeStoredToken = () => {
+  localStorage.removeItem('token');
   localStorage.removeItem('support_ticket_token');
   localStorage.removeItem('support_ticket_user');
 };

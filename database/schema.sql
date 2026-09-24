@@ -1,14 +1,14 @@
 -- =====================================================================
 -- Support Ticket Management System - Database Schema
--- Database: support_ticket_db
+-- Database: support_tickets
 -- Engine: InnoDB | Charset: utf8mb4 | Collation: utf8mb4_unicode_ci
 -- =====================================================================
 
-CREATE DATABASE IF NOT EXISTS `support_ticket_db`
+CREATE DATABASE IF NOT EXISTS `support_tickets`
     DEFAULT CHARACTER SET utf8mb4
     COLLATE utf8mb4_unicode_ci;
 
-USE `support_ticket_db`;
+USE `support_tickets`;
 
 -- Drop existing tables in reverse dependency order
 DROP TABLE IF EXISTS `ticket_comments`;
@@ -27,7 +27,6 @@ CREATE TABLE `users` (
     `role` ENUM('customer', 'agent') NOT NULL DEFAULT 'customer',
     `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     
-    -- Indexes for performance
     INDEX `idx_users_email` (`email`),
     INDEX `idx_users_role` (`role`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -39,28 +38,21 @@ CREATE TABLE `users` (
 CREATE TABLE `tickets` (
     `id` INT AUTO_INCREMENT PRIMARY KEY,
     `user_id` INT NOT NULL,
-    `subject` VARCHAR(255) NOT NULL,
-    `description` TEXT NOT NULL,
+    `subject` VARCHAR(200) NOT NULL,
+    `description` TEXT,
     `priority` ENUM('low', 'medium', 'high', 'urgent') NOT NULL DEFAULT 'medium',
     `status` ENUM('open', 'in_progress', 'resolved', 'closed') NOT NULL DEFAULT 'open',
     `assigned_to` INT NULL,
     `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     `updated_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 
-    -- Foreign Key constraints
-    CONSTRAINT `fk_tickets_user_id` 
-        FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) 
-        ON DELETE CASCADE ON UPDATE CASCADE,
-    CONSTRAINT `fk_tickets_assigned_to` 
-        FOREIGN KEY (`assigned_to`) REFERENCES `users` (`id`) 
-        ON DELETE SET NULL ON UPDATE CASCADE,
+    FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY (`assigned_to`) REFERENCES `users` (`id`) ON DELETE SET NULL ON UPDATE CASCADE,
 
-    -- Performance Indexes for search, filter & join queries
+    INDEX `idx_status` (`status`),
     INDEX `idx_tickets_user_id` (`user_id`),
-    INDEX `idx_tickets_status` (`status`),
     INDEX `idx_tickets_priority` (`priority`),
-    INDEX `idx_tickets_assigned_to` (`assigned_to`),
-    INDEX `idx_tickets_created_at` (`created_at`)
+    INDEX `idx_tickets_assigned_to` (`assigned_to`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ---------------------------------------------------------------------
@@ -74,16 +66,9 @@ CREATE TABLE `ticket_comments` (
     `comment` TEXT NOT NULL,
     `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
 
-    -- Foreign Key constraints
-    CONSTRAINT `fk_comments_ticket_id` 
-        FOREIGN KEY (`ticket_id`) REFERENCES `tickets` (`id`) 
-        ON DELETE CASCADE ON UPDATE CASCADE,
-    CONSTRAINT `fk_comments_user_id` 
-        FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) 
-        ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY (`ticket_id`) REFERENCES `tickets` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
 
-    -- Performance Indexes for retrieving ticket threads
     INDEX `idx_comments_ticket_id` (`ticket_id`),
-    INDEX `idx_comments_user_id` (`user_id`),
-    INDEX `idx_comments_created_at` (`created_at`)
+    INDEX `idx_comments_user_id` (`user_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;

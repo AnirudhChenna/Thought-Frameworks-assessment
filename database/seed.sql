@@ -4,7 +4,7 @@
 -- Bcrypt Hash: $2a$10$gpSa5fH9DsQgn.AMBv8Jweu3xwHMNSiD7YE8qE25BaeGuPj80apDu
 -- =====================================================================
 
-USE `support_ticket_db`;
+USE `support_tickets`;
 
 -- Clear existing data
 SET FOREIGN_KEY_CHECKS = 0;

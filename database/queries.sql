@@ -3,7 +3,7 @@
 -- Demonstrating JOINs, Filtering, Aggregations, and Performance Indexes
 -- =====================================================================
 
-USE `support_ticket_db`;
+USE `support_tickets`;
 
 -- =====================================================================
 -- Requirement 8: Query to return all open tickets along with customer's
